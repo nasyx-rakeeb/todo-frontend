@@ -43,7 +43,7 @@ export default class CreateTodo extends Component {
             todo_completed: this.state.todo_completed
         }
 
-        axios.post('http://localhost:4000/todos/add', newTodo)
+        axios.post('mongodb+srv://nasyx:allah786@todos.oe0ndgp.mongodb.net/?retryWrites=true&w=majority/todos/add', newTodo)
             .then( res => console.log(res.data));
         
         this.setState({

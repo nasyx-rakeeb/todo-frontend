@@ -14,7 +14,7 @@ export default class EditTodo extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/todos/' + this.props.match.params.id)
+        axios.get('mongodb+srv://nasyx:allah786@todos.oe0ndgp.mongodb.net/?retryWrites=true&w=majority/todos/' + this.props.match.params.id)
             .then( res => {
                 this.setState({
                     todo_description: res.data.todo_description,
@@ -58,7 +58,7 @@ export default class EditTodo extends Component {
             todo_priority: this.state.todo_priority,
             todo_completed: this.state.todo_completed
         };
-        axios.post('http://localhost:4000/todos/update/' + this.props.match.params.id, obj)
+        axios.post('mongodb+srv://nasyx:allah786@todos.oe0ndgp.mongodb.net/?retryWrites=true&w=majority/todos/update/' + this.props.match.params.id, obj)
             .then( res => console.log(res.data));
 
         this.props.history.push('/');

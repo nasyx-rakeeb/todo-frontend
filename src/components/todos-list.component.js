@@ -25,7 +25,7 @@ export default class TodosList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/todos')
+        axios.get('mongodb+srv://nasyx:allah786@todos.oe0ndgp.mongodb.net/?retryWrites=true&w=majority/todos')
             .then( res => {
                 this.setState({
                     todos: res.data
@@ -35,7 +35,7 @@ export default class TodosList extends Component {
     }
 
     componentDidUpdate() {
-        axios.get('http://localhost:4000/todos')
+        axios.get('mongodb+srv://nasyx:allah786@todos.oe0ndgp.mongodb.net/?retryWrites=true&w=majority/todos')
             .then( res => {
                 this.setState({
                     todos: res.data
